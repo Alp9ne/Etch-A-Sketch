@@ -5,7 +5,28 @@ body {
     align-items: center;
 }
 
-.the-big-div {
+.main-div {
     border: 2px solid #eb6134;
+    max-width: 960px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: space-between;   
+}
+.sub-div {
+    /* border: 2px solid #34eb58; */
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 960px;
     
+    /* border: 1px dotted black; */
+    
+}
+
+.sub-div, .main-div {
+    aspect-ratio: 1/1;
 }
