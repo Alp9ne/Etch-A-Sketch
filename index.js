@@ -35,3 +35,16 @@ function createGrids(userInput) {
 
 let gridInput = 16; // change to take manual user input later.
 createGrids(gridInput);
+
+
+function drawOnGrids() {
+    const grids = document.querySelectorAll('.sub-div');
+    console.log(grids);
+    grids.forEach((item) => {
+        item.addEventListener('mousedown', (e) => {
+            e.target.style.backgroundColor = 'red';
+        })
+    })
+
+}
+drawOnGrids();
