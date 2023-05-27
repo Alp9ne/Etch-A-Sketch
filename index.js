@@ -41,14 +41,19 @@ function drawOnGrids() {
     let mouseDown = false
     document.body.onmousedown = () => (mouseDown = true)
     document.body.onmouseup = () => (mouseDown = false)
+    let currentColor = document.querySelector('.colorPicker');
+    currentColor.addEventListener('input', () => {
+    })
+
     grids.forEach((item) => {
         item.addEventListener('mouseover', (e) => {
             console.log(mouseDown);
             if (mouseDown == true) {
-                e.target.style.backgroundColor = 'red';
+                e.target.style.backgroundColor = currentColor.value;
             }
         })
     })
 
 }
+
 drawOnGrids();
