@@ -3,15 +3,17 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #e0dcdc;
 }
 
 .main-div {
-    border: 2px solid #eb6134;
-    max-width: 960px;
+    max-width: 600px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    align-items: space-between;   
+    align-items: space-between;  
+    background-color: white;
+    box-shadow: 0px 0px 4px 2px #b8b8b8; 
 }
 
 .sub-div {
