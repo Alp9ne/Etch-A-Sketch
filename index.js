@@ -4,7 +4,7 @@ function createGrids(userInput) {
     const page = document.querySelector('body');
     const mainDiv = document.createElement('div');
     mainDiv.classList.add('main-div');
-    const height = 960;
+    const height = 600;
     mainDiv.style.height = `${height}px`;
     page.appendChild(mainDiv);
 
