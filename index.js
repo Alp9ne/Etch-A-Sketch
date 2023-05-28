@@ -1,8 +1,9 @@
 /* function to create a div within another div (LATER) */
 
+const page = document.querySelector('body');
+const mainDiv = document.createElement('div');
+
 function createGrids(userInput) {
-    const page = document.querySelector('body');
-    const mainDiv = document.createElement('div');
     mainDiv.classList.add('main-div');
     const height = 600;
     mainDiv.style.height = `${height}px`;
@@ -36,6 +37,20 @@ function createGrids(userInput) {
 let gridInput = 16; // change to take manual user input later.
 createGrids(gridInput);
 
+
+// clear and eraser buttons
+const clear = document.querySelector('.clear');
+clear.onclick = () => {
+}
+
+const eraser = document.querySelector('.eraser');
+let eraserOn = false;
+eraser.onclick = () => {
+    eraser.classList.toggle('active');
+    eraserOn = !eraserOn;
+}
+
+
 function drawOnGrids() {
     const grids = document.querySelectorAll('.sub-div');
     let mouseDown = false
@@ -47,13 +62,20 @@ function drawOnGrids() {
 
     grids.forEach((item) => {
         item.addEventListener('mouseover', (e) => {
-            console.log(mouseDown);
-            if (mouseDown == true) {
+            if (mouseDown == true && eraserOn == false) {
                 e.target.style.backgroundColor = currentColor.value;
+            } else if (mouseDown == true && eraserOn == true) {
+                e.target.style.backgroundColor = 'white';
             }
         })
     })
 
 }
-
 drawOnGrids();
+
+
+// grid input selector
+const gridInputPanel = document.createElement('div');
+gridInputPanel.textContent = `Grid Input: ${gridInput} x ${gridInput}`;
+gridInputPanel.classList.add('grid-input-panel')
+page.appendChild(gridInputPanel);
